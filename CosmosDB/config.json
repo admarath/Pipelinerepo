@@ -1,0 +1,75 @@
+﻿{
+  "id": "f121c221-91ed-47b4-a24c-ac4042c2a78f",
+  "version": 3,
+  "createIcm": false,
+  "icmConfig": {
+    "severity": 3,
+    "routingId": "EnvUpdatesLSI",
+    "correlationConfig": {
+      "providerType": "errorid",
+      "prefixToken": "ProdDBUpdate",
+      "delimiter": "-"
+    },
+    "Title": "[Beta] [Anomaly] - New Error trend for Organization Actions Completed in Station2 on ErrorHash - {{Identifier}}"
+  },
+  "alertEmail": "dsebot@microsoft.com",
+  "processorType": "ErrorTrend",
+  "enabled": true,
+  "runSequential": false,
+  "name": "[Beta] [Anomaly] - New Error trend for Organization Actions Completed in Station2",
+  "alertWindowInMinutes": 180,
+  "frequencyInMinutes": 180,
+  "description": "The following stack traces have been reported in last 60 mins",
+  "jarvisDashboardLink": "",
+  "kustoLevelItems": [
+    {
+      "levelItem": "NA",
+      "kustoConfigs": [
+        {
+          "cluster": "Crmanacus",
+          "database": "CRMAnalytics"
+        }
+      ]
+    }
+  ],
+  "station": "Station2",
+  "runAtLevel": "geo",
+  "kustoQuery": "GetNewErrorsInOrgActionCompletedByStation('Station2', dynamic(['JPN', 'LATAM', 'CAN', 'IND']), ago(14d), ago(6h), ago(6h), ago(3h))",
+  "positiveThreshold": 0,
+  "negativeThreshold": -9999,
+  "binRange": "30m",
+  "identifierMaps": [
+    {
+      "IdentifierName": "Identifier",
+      "ColumnName": "ErrorHash"
+    }
+  ],
+  "errorTrendCheckConfig": {
+    "versionCountQuery": "OrganizationActionCompletedParsed | where PreciseTimeStamp between (ago(6h) .. ago(3h)) | where ErrorHashMessage == {Identifier} | summarize errorCount= count() by RoleVersion = applicationVersion",
+    "hitCount": 2,
+    "avgErrorCount": 2,
+    "changePercent": 2,
+    "changePercentCount": 2,
+    "expiryDays": 14,
+    "currentPercentIncreaseCheck": 2,
+    "currentCountCheck": 0,
+    "batchSize": 100,
+    "batchWaitTimeInMin": 3,
+    "minCountForHighPriority": 20,
+    "minDaysForHighPriority": 7,
+    "errorThrottleLimit": 1000,
+    "ignoreNotifiedErrors": true
+  },
+  "diagnosticQueries": [
+    {
+      "query": "OrganizationActionCompletedParsed | where PreciseTimeStamp > ago(14d)| where Geo in ('JPN', 'LATAM', 'CAN', 'IND')| where ErrorHashMessage == {Identifier} | summarize by ErrorHashMessage, ErrorMessageTrim",
+      "diagnosticQueryType": "htmlTable",
+      "name": "ErrorHashAndMessage"
+    }
+  ],
+  "_rid": "HgkhAM0gTgBWAAAAAAAAAA==",
+  "_self": "dbs/HgkhAA==/colls/HgkhAM0gTgA=/docs/HgkhAM0gTgBWAAAAAAAAAA==/",
+  "_etag": "\"1b0033ae-0000-0300-0000-5cc813c50000\"",
+  "_attachments": "attachments/",
+  "_ts": 1556616133
+}
