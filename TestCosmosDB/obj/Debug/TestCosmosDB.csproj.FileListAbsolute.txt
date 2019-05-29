@@ -1,0 +1,16 @@
+E:\src\Demo\TestCosmosDB\bin\Debug\Microsoft.Azure.Documents.ServiceInterop.dll
+E:\src\Demo\TestCosmosDB\bin\Debug\TestCosmosDB.exe.config
+E:\src\Demo\TestCosmosDB\bin\Debug\TestCosmosDB.exe
+E:\src\Demo\TestCosmosDB\bin\Debug\TestCosmosDB.pdb
+E:\src\Demo\TestCosmosDB\bin\Debug\CosmosDB.dll
+E:\src\Demo\TestCosmosDB\bin\Debug\Microsoft.Azure.Documents.Client.dll
+E:\src\Demo\TestCosmosDB\bin\Debug\Newtonsoft.Json.dll
+E:\src\Demo\TestCosmosDB\bin\Debug\CosmosDB.pdb
+E:\src\Demo\TestCosmosDB\bin\Debug\CosmosDB.dll.config
+E:\src\Demo\TestCosmosDB\bin\Debug\Microsoft.Azure.Documents.Client.xml
+E:\src\Demo\TestCosmosDB\bin\Debug\Newtonsoft.Json.xml
+E:\src\Demo\TestCosmosDB\obj\Debug\TestCosmosDB.csprojAssemblyReference.cache
+E:\src\Demo\TestCosmosDB\obj\Debug\TestCosmosDB.csproj.CoreCompileInputs.cache
+E:\src\Demo\TestCosmosDB\obj\Debug\TestCosmosDB.csproj.CopyComplete
+E:\src\Demo\TestCosmosDB\obj\Debug\TestCosmosDB.exe
+E:\src\Demo\TestCosmosDB\obj\Debug\TestCosmosDB.pdb
